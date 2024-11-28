@@ -1,1 +1,1 @@
-this is for learning by practice.
+this is for learning by doing.
