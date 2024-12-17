@@ -192,7 +192,7 @@ void loop() {
   float out_f = dequantize(out_int8, tflu_o_scale, tflu_o_zero_point);
 
   // After the first three samples, is_valid will be always true
-  is_valid = is_valid || cur_idx == 2;
+  is_valid =     is_valid || cur_idx == 2   ; // once true is_valid stores it with = this operator
 
   if (is_valid) {
     if(out_f > 0.5) {
