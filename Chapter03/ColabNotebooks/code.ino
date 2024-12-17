@@ -74,7 +74,8 @@ void tflu_initialization()
   // Get the pointers for the input and output tensors
   tflu_i_tensor = tflu_interpreter->input(0);
   tflu_o_tensor = tflu_interpreter->output(0);
-
+// reinterpret_cast is used to safely cast from one pointer type to another.
+ //TfLiteAffineQuantization provides access to quantization parameters like scale and zero point.
   const auto* i_quantization = reinterpret_cast<TfLiteAffineQuantization*>(tflu_i_tensor->quantization.params);
   const auto* o_quantization = reinterpret_cast<TfLiteAffineQuantization*>(tflu_o_tensor->quantization.params);
 
